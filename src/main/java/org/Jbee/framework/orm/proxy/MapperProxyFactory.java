@@ -1,6 +1,4 @@
-package org.Jbee.framework.orm.mapper;
-
-import org.Jbee.framework.orm.session.SqlSession;
+package org.Jbee.framework.orm.proxy;
 
 import java.lang.reflect.Proxy;
 
@@ -22,8 +20,8 @@ public class MapperProxyFactory<T> {
         return (T) Proxy.newProxyInstance(mapperInterface.getClassLoader(), new Class[] { mapperInterface }, mapperProxy);
     }
 
-    public T newInstance(SqlSession sqlSession) {
-        MapperProxy<T> mapperProxy = new MapperProxy<T>(sqlSession, mapperInterface);
+    public T newInstance() {
+        MapperProxy<T> mapperProxy = new MapperProxy<T>(mapperInterface);
         return newInstance(mapperProxy);
     }
 }

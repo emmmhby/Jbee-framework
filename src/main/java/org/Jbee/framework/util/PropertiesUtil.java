@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public final class PropsUtil {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PropsUtil.class);
+public final class PropertiesUtil {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PropertiesUtil.class);
 
     /**
     * 加载属性文件

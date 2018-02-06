@@ -10,7 +10,7 @@ public class View {
         this.path=path;
         model= new HashMap<String,Object>();
     }
-    public View addModel(String key,Object value){
+    public View setModel(String key,Object value){
         model.put(key, value);
         return this;
     }

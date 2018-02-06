@@ -1,24 +1,23 @@
-package org.Jbee.framework.orm.mapper;
+package org.Jbee.framework.orm.proxy;
 
-import org.Jbee.framework.orm.session.SqlSession;
-
+import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapperRegistry {
+public final class MapperRegistry {
 
-    private final Map<Class<?>,MapperProxyFactory<?>>  registeredMapper=new HashMap<Class<?>, MapperProxyFactory<?>>();
+    private static final Map<Class<?>,MapperProxyFactory<?>>  registeredMapper=new HashMap<Class<?>, MapperProxyFactory<?>>();
 
     public MapperRegistry() {
     }
 
-    public <T>  boolean hasMapper(Class<T> clazz){
+    public static <T>  boolean hasMapper(Class<T> clazz){
         return registeredMapper.containsKey(clazz);
     }
 
-    public <T> void addMapper(Class<T> tClass) throws Exception {
+    public static <T> void addMapper(Class<T> tClass) throws Exception {
         if(tClass.isInterface()){
             if(hasMapper(tClass)){
                 throw new Exception("Mapper"+tClass+"is already Registry");
@@ -35,13 +34,13 @@ public class MapperRegistry {
         }
     }
 
-    public <T> T getMapper(Class<T> tClass, SqlSession sqlSession) throws Exception {
-        MapperProxyFactory<T> mapperProxyFactory= (MapperProxyFactory<T>) registeredMapper.get(tClass);
+    public static  <T> T getMapper(Field tClass) throws Exception {
+        MapperProxyFactory<T> mapperProxyFactory= (MapperProxyFactory<T>) registeredMapper.get(tClass.getType());
         if(mapperProxyFactory==null){
             throw new Exception("Mapper"+tClass+"is not exist");
         }
         try {
-            return mapperProxyFactory.newInstance(sqlSession);
+            return mapperProxyFactory.newInstance();
         }catch (Exception e) {
             e.printStackTrace();
             return null;

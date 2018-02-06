@@ -52,12 +52,6 @@
             <version>1.7.21</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.33</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

@@ -1,10 +1,6 @@
 package org.Jbee.framework.helper;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-import org.Jbee.framework.orm.mapper.MapperProxy;
-import org.Jbee.framework.orm.mapper.MapperRegistry;
-import org.Jbee.framework.orm.session.SqlSession;
-import org.Jbee.framework.util.ClassUtil;
+import org.Jbee.framework.orm.proxy.MapperRegistry;
 import org.Jbee.framework.util.CollectionUtil;
 
 import java.util.Set;

@@ -59,7 +59,7 @@ public final class ClassUtil {
                 if (url != null) {
                     String protocol = url.getProtocol();
                     if ("file".equals(protocol)) {
-                        String packagePath = url.getPath().replace("%20", "");
+                        String packagePath = url.getPath().replace("%20", " ");
                         addClass(classSet, packagePath, packageName);
                     } else if ("jar".equals(protocol)) {
                         JarURLConnection jarURLConnection = (JarURLConnection) url.openConnection();

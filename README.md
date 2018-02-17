@@ -62,7 +62,7 @@ jbee.framework.app.static_path=/static/
 ```
 以上就是所有必要的配置，下面看如何使用
 
-#### Controller
+### Controller
 与Spring MVC差不多，使用 ==@Controller==注解来修饰控制器类，使用 ==@Action==注解来匹配URL
 
 示例代码：
@@ -93,7 +93,7 @@ public class HelloAction {
     }
 }
 ```
-#### DAO
+### DAO
 持久层与Mybatis类似，只需编写DAO接口以及SQL语句，目前只支持静态SQL。接口用注解 ==@Repository==声明，方法用 ==@Select==、==@Insert==、==@Delete==、==@Update==来声明。
  
  示例代码：
@@ -109,7 +109,7 @@ public interface UserMapper {
     void createUser(User user);
 }
 ```
-#### IOC
+### IOC
 IOC是Spring的核心，Jbee也实现了一个简单的IOC容器。
 使用注解 ==@Inject==修饰需要注入的类。
 
@@ -126,7 +126,6 @@ public class HelloAction {
     ......
 }
 ```
-
 ```Java
 @Service
 public class UserService {

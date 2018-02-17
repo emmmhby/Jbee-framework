@@ -7,7 +7,7 @@ package group.jbee.framework;
  */
 public interface ConfigConstant {
 
-    String CONFIG_FILE="Jbee.properties";
+    String CONFIG_FILE="jbee.properties";
     String JDBC_DRIVER="jbee.framework.jdbc.driver";
     String JDBC_URL="jbee.framework.jdbc.url";
     String JDBC_USERNAME="jbee.framework.jdbc.username";
